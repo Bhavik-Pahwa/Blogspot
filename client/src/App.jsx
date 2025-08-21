@@ -1,11 +1,18 @@
 import './App.css'
-import Hero from "./components/Hero.jsx";
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Blogs from './pages/Blogs';
+import Login from './pages/Login';
 
 function App() {
 
   return (
     <>
-      <Hero />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/blogs' element={<Blogs />} />
+        <Route path='/login' element={<Login />} />
+      </Routes>
     </>
   )
 }
