@@ -32,4 +32,5 @@
 body{
     width: 100vw;
     overflow-x: hidden;
+    @apply bg-oxford_blue;
 }

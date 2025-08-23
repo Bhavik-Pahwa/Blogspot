@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import LoginForm from "../pages/LoginForm";
 
 function Hero() {
   const [progress, setProgress] = useState(0);
@@ -52,12 +53,11 @@ function Hero() {
           </div>
         <div className="flex w-full gap-5 justify-center">
           <Link to="/blogs" className="!p-5 rounded-2xl bg-orange_web text-white font-lambu font-semibold text-lg">Read Blogs</Link>
-          <Link to="/login" className="!p-5 rounded-2xl border-2 border-orange_web text-platinum font-lato font-semibold text-lg">Create Your Own Blogs</Link>
+          <Link to="/Login" className="!p-5 rounded-2xl border-2 border-orange_web text-platinum font-lato font-semibold text-lg cursor-pointer">Create Your Own Blogs</Link>
         </div>
-
+		
       </div>
-    </div>
+	  </div>
   );
 }
-
 export default Hero;
