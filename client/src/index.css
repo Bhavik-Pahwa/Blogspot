@@ -34,3 +34,33 @@ body{
     overflow-x: hidden;
     @apply bg-oxford_blue;
 }
+.blogs {
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--platinum) transparent;
+}
+
+.blogs::-webkit-scrollbar {
+  width: 12px;
+}
+
+.blogs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.blogs::-webkit-scrollbar-track-piece {
+  background: transparent;
+  margin-top: 25vh;
+  margin-bottom: 25vh;
+}
+
+.blogs::-webkit-scrollbar-thumb {
+  background: yellow;
+  border-radius: 50%;
+  min-height: 20px;
+}
+
+.blogs::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
