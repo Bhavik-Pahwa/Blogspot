@@ -28,7 +28,9 @@ function Hero() {
         <h1 className="text-orange_web flex text-[10rem] font-lambu">
           Blogspot
         </h1>
-        <h2 className="text-platinum text-3xl text-shadow-lg/50 text-shadow-orange_web z-20">
+        <h2 className="text-platinum text-3xl text-shadow-lg/50 z-20"   style={{
+    textShadow: "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black",
+  }}>
           Because Every Thought Matters
         </h2>
 
@@ -47,7 +49,9 @@ function Hero() {
             <h1 className="text-orange_web flex text-[3rem] font-lambu !pt-2">
               Read Blogs, Write Blogs
             </h1>
-            <h2 className="text-platinum text-4xl text-shadow-lg/50 !pt-2 text-shadow-orange_web z-20">
+            <h2 className="text-platinum text-4xl text-shadow-lg/50 !pt-2 text-shadow-orange_web z-20" style={{
+    textShadow: "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black",
+  }}>
               Whatever Your Heart Beats For...
             </h2>
           </div>

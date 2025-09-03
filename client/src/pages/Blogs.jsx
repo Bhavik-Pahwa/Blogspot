@@ -89,11 +89,11 @@ function Blogs() {
       </div>
       <div className="section relative w-screen h-screen shadow-2xl bg-gray-900 z-[100] flex justify-between">
         <div className="w-1/3 h-screen relative shadow-2xl">
-          <div className="absolute !p-2.5 flex w-full bg-orange_web rounded-md h-1/2 top-1/2 -translate-y-1/2 left-[20px] flex-col justify-between">
-            <h1 className="font-oswald text-3xl flex justify-center w-full">
+          <div className="absolute !p-2.5 flex w-full bg-orange_web rounded-md top-1/2 -translate-y-1/2 left-[20px] flex-col justify-between">
+            <h1 className="font-oswald text-3xl flex justify-center w-full !pb-3">
               Filter Results
             </h1>
-            <div className="flex flex-wrap justify-around gap-2">
+            <div className="flex flex-col gap-2 !pb-3">
               <p
                 onClick={() => toggleFilter("Personal")}
                 className={`cursor-pointer !p-2 text-lg rounded-2xl transition ${
