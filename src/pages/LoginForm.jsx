@@ -19,7 +19,7 @@ function LoginForm() {
     try {
       const params = new URLSearchParams(formData).toString();
       const response = await fetch(
-        `https://script.google.com/macros/s/AKfycbzBAlzbPxOj1uxZKAb5gKE7reEXtC4tv0y8-WqTjolVPPX0aLan7NsFC45PDNT_rL6R4A/exec?${params}`
+        `https://script.google.com/macros/s/AKfycbyi-ysub8pQLjD3--FF8g5DsossxCbMz9_96RU1FdvF1Y2UDWRdVpCQO2ohNwsxjNqSvA/exec?email=test@gmail.com&password=1234`
       );
       const result = await response.json();
 
