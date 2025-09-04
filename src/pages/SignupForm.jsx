@@ -19,10 +19,15 @@ function SignupForm() {
     e.preventDefault();
     setIsLogging(true);
     setMessage("");
+
     try {
-      const params = new URLSearchParams(formData).toString();
       const response = await fetch(
-        `https://script.google.com/macros/s/AKfycbzBAlzbPxOj1uxZKAb5gKE7reEXtC4tv0y8-WqTjolVPPX0aLan7NsFC45PDNT_rL6R4A/exec?${params}`
+        "https://script.google.com/macros/s/AKfycbzBAlzbPxOj1uxZKAb5gKE7reEXtC4tv0y8-WqTjolVPPX0aLan7NsFC45PDNT_rL6R4A/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
       );
       const result = await response.json();
       setMessage(result.message);
