@@ -6,6 +6,7 @@ import LoginForm from './pages/LoginForm';
 import SignupForm from './pages/SignupForm';
 import CreateBlog from './pages/CreateBlog';
 import Dashboard from './pages/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
 
@@ -17,7 +18,11 @@ function App() {
         <Route path='/login' element={<LoginForm />} />
         <Route path='/signup' element={<SignupForm />} />
         <Route path='/create' element={<CreateBlog />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/dashboard' element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        } />
       </Routes>
     </>
   )

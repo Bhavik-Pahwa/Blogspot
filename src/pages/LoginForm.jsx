@@ -24,6 +24,7 @@ function LoginForm() {
       const result = await response.json();
 
       if (result.status === "success") {
+        localStorage.setItem("user", JSON.stringify({ email: formData.email }));
         navigate("/dashboard");
       } else {
         setMessage("❌ " + result.message);
