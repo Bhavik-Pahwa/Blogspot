@@ -5,6 +5,7 @@ import Blogs from './pages/Blogs';
 import LoginForm from './pages/LoginForm';
 import SignupForm from './pages/SignupForm';
 import CreateBlog from './pages/CreateBlog';
+import Dashboard from './pages/Dashboard';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/login' element={<LoginForm />} />
         <Route path='/signup' element={<SignupForm />} />
         <Route path='/create' element={<CreateBlog />} />
+        <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
     </>
   )
