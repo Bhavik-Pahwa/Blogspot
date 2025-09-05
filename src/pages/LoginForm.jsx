@@ -8,7 +8,7 @@ function LoginForm() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    alert("An account has been created for the judges.\nEMAIL: admin@admin.com\nPASS: admin");
+    alert("An account has been created for the judges.\nEMAIL: admin@admin.com\nPASS: admin\nYou can Definitely create your own account too...");
   }, []);
 
   const handleChange = (e) => {
