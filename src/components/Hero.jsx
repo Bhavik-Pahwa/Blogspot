@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import LoginForm from "../pages/LoginForm";
 
 function Hero() {
   const [progress, setProgress] = useState(0);
@@ -9,7 +8,6 @@ function Hero() {
     const handleScroll = () => {
       const pageHeight = window.innerHeight;
       const scrollY = window.scrollY;
-
       const p = Math.min(scrollY / pageHeight, 1);
       setProgress(p);
     };
@@ -24,44 +22,68 @@ function Hero() {
 
   return (
     <div className="w-screen overflow-x-hidden">
-      <div className="w-screen h-screen bg-oxford_blue relative flex flex-col items-center justify-around">
-        <h1 className="text-orange_web flex text-[10rem] font-lambu">
+      {/* Section 1 */}
+      <div className="w-screen h-screen bg-oxford_blue relative flex flex-col items-center justify-center !px-4">
+        <h1 className="text-orange_web font-lambu text-5xl sm:text-7xl lg:text-[10rem] text-center">
           Blogspot
         </h1>
-        <h2 className="text-platinum text-3xl text-shadow-lg/50 z-20"   style={{
-    textShadow: "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black",
-  }}>
+        <h2
+          className="text-platinum text-lg sm:text-2xl lg:text-3xl text-center z-20 mt-4"
+          style={{
+            textShadow:
+              "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black",
+          }}
+        >
           Because Every Thought Matters
         </h2>
-
         <img
           src="/pen.png"
           alt="pen"
-          className="fixed top-1/10 w-lg left-2/5 z-10 pointer-events-none"
+          className="fixed z-10 pointer-events-none 
+                     top-1/3 sm:top-1/4 lg:top-1/5 
+                     left-2/3 -translate-x-1/2"
           style={{
+            width: "30rem",
+            maxWidth: "90vw",
             transform: `rotate(${rotation}deg) translateX(${translateX}px) translateY(${translateY}px)`,
           }}
         />
       </div>
 
-      <div className="w-screen h-screen bg-oxford_blue relative flex flex-col items-center justify-around">
-          <div>
-            <h1 className="text-orange_web flex text-[3rem] font-lambu !pt-2">
-              Read Blogs, Write Blogs
-            </h1>
-            <h2 className="text-platinum text-4xl text-shadow-lg/50 !pt-2 text-shadow-orange_web z-20" style={{
-    textShadow: "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black",
-  }}>
-              Whatever Your Heart Beats For...
-            </h2>
-          </div>
-        <div className="flex w-full gap-5 justify-center">
-          <Link to="/blogs" className="!p-5 rounded-2xl bg-orange_web text-white font-lambu font-semibold text-lg">Read Blogs</Link>
-          <Link to="/Login" className="!p-5 rounded-2xl border-2 border-orange_web text-platinum font-lato font-semibold text-lg cursor-pointer">Create Your Own Blogs</Link>
+      {/* Section 2 */}
+      <div className="w-screen h-screen bg-oxford_blue relative flex flex-col items-center justify-center !px-4 text-center">
+        <div>
+          <h1 className="text-orange_web font-lambu text-3xl sm:text-5xl lg:text-6xl !pt-2">
+            Read Blogs, Write Blogs
+          </h1>
+          <h2
+            className="text-platinum text-base sm:text-xl lg:text-2xl mt-2 z-20"
+            style={{
+              textShadow:
+                "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black",
+            }}
+          >
+            Whatever Your Heart Beats For...
+          </h2>
         </div>
-		
+
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 !mt-6">
+          <Link
+            to="/blogs"
+            className="!px-6 !py-3 rounded-2xl bg-orange_web text-white font-lambu font-semibold text-lg text-center"
+          >
+            Read Blogs
+          </Link>
+          <Link
+            to="/login"
+            className="!px-6 !py-3 rounded-2xl border-2 border-orange_web text-platinum font-lato font-semibold text-lg text-center"
+          >
+            Create Your Own Blogs
+          </Link>
+        </div>
       </div>
-	  </div>
+    </div>
   );
 }
+
 export default Hero;

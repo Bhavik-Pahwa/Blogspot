@@ -1,17 +1,46 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    setIsLoggedIn(!!user);
+  }, []);
+
   return (
-    <div className=' fixed top-5 w-4/5 text-platinum left-1/2 -translate-x-1/2 border-2 border-white rounded-md !p-2.5 text-xl font-lato font-bold bg-[rgba(255,255,255,0.05)] backdrop-blur-lg flex justify-between items-center z-50'>
-        <Link to="/" className='text-2xl'>Blogspot</Link>
-        <span className='w-1/4 flex justify-around items-center'>
-          <Link to="/login" className='relative after:content-[""] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-platinum after:transition-[width] after:duration-300 after:ease-in-out hover:after:w-full cursor-pointer z-50'>Sign In</Link>
-          <Link to="/blogs" className='bg-platinum text-oxford_blue !p-2 !pr-3 !pl-3 rounded-4xl cursor-pointer'>Blogs</Link>
-        </span>
-        
-    </div>
-  )
+    <nav className="w-full fixed top-0 left-0 flex flex-col sm:flex-row justify-between items-center !px-4 !py-3 sm:!px-6 sm:!py-4 bg-oxford_blue text-platinum shadow-md z-50">
+      <Link to="/" className="text-3xl font-bold font-lambu tracking-wide">
+        Blogspot
+      </Link>
+
+      <div className="flex gap-8 items-center font-lato text-lg">
+        <Link
+          to="/blogs"
+          className="hover:text-orange_web transition-colors duration-200"
+        >
+          Blogs
+        </Link>
+
+        {isLoggedIn ? (
+          <Link
+            to="/dashboard"
+            className="font-semibold text-orange_web hover:underline hover:decoration-2"
+          >
+            Dashboard
+          </Link>
+        ) : (
+          <Link
+            to="/login"
+            className="font-semibold text-orange_web hover:underline hover:decoration-2"
+          >
+            Sign In
+          </Link>
+        )}
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;
