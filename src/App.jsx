@@ -20,7 +20,11 @@ function App() {
         <Route path='/signup' element={<SignupForm />} />
         <Route
           path='/dashboard'
-          element={<Dashboard blogs={blogs} setBlogs={setBlogs} />}
+          element={
+            <ProtectedRoute>
+              <Dashboard blogs={blogs} setBlogs={setBlogs} />
+            </ProtectedRoute>
+          }
         />
       </Routes>
     </>
